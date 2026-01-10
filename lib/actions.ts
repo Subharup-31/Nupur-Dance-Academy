@@ -88,6 +88,10 @@ export async function getMyEntries(): Promise<{ entries: ClassEntry[]; error: st
     return { entries: (entries || []) as ClassEntry[], error: null };
 }
 
+/**
+ * Checks if the student has already submitted an entry for today.
+ * @returns Today's entry or null.
+ */
 export async function getTodayEntry(): Promise<{ entry: ClassEntry | null; error: string | null }> {
     const { user, supabase, error: authError } = await getAuthenticatedUser();
     if (authError || !user) return { entry: null, error: authError || 'Not authenticated' };
