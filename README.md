@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dance Class Learning Log
+
+A Next.js application for dance students to log their progress and for instructors to monitor student activity.
 
 ## Getting Started
 
