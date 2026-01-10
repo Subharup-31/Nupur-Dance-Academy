@@ -141,6 +141,10 @@ export async function signOut(): Promise<void> {
 
 // Admin Actions
 
+/**
+ * Admin Action: Fetches all student profiles.
+ * @returns List of student profiles.
+ */
 export async function getAllStudents(): Promise<{ students: Profile[]; error: string | null }> {
     const { supabase, error: authError } = await getAdminUser();
     if (authError) return { students: [], error: authError };
