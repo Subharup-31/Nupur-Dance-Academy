@@ -39,6 +39,11 @@ async function getAdminUser() {
 
 // Student Actions
 
+/**
+ * Submits a new class entry for the current student.
+ * @param content The learning log content.
+ * @returns Object with success/error status.
+ */
 export async function submitEntry(content: string): Promise<{ error?: string; success?: boolean }> {
     const { user, supabase, error: authError } = await getAuthenticatedUser();
     if (authError || !user) return { error: authError || 'Not authenticated' };
