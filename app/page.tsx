@@ -1,65 +1,89 @@
-import Image from "next/image";
+import SausageNav from '@/components/SausageNav';
+import Link from 'next/link';
+import { Sparkles } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen w-full flex flex-col items-center justify-center text-center px-4 py-6 bg-background relative overflow-hidden">
+      {/* Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none bg-grid-pattern"></div>
+
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+      <SausageNav />
+
+      <div className="relative z-10 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-24 md:pt-12 px-4 md:px-8">
+
+        {/* Left Column: Content */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+          {/* Badge */}
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 mb-8 text-xs font-semibold tracking-wide text-foreground uppercase bg-card border border-border rounded-full shadow-sm animate-fade-in">
+            <Sparkles className="w-3.5 h-3.5 text-primary" />
+            Tracking 2.0
+          </span>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground mb-6 leading-[1.1] animate-slide-up">
+            Master Your <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-muted-foreground">
+              Dance Journey.
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed animate-slide-up [animation-delay:100ms]">
+            Capture every breakthrough. A simple, elegant way to log your daily dance progress and keep your momentum alive.
           </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto animate-slide-up [animation-delay:200ms]">
+            <Link
+              href="/signup"
+              className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold text-base hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              Start Tracking
+            </Link>
+            <Link
+              href="/login"
+              className="w-full sm:w-auto px-8 py-4 bg-card text-foreground border border-border rounded-full font-semibold text-base hover:bg-secondary hover:scale-[1.02] active:scale-[0.98] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              View Demo
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Right Column: Image */}
+        <div className="flex justify-center items-center order-1 lg:order-2 animate-slide-down [animation-delay:150ms]">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] shrink-0">
+            {/* Organic blobs background/glow */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-primary/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
+
+            {/* Image Container with Double Ring Border */}
+            <div className="relative w-full h-full rounded-full p-2 border border-border/50 bg-background/50 backdrop-blur-sm shadow-2xl ring-1 ring-border/50">
+              <div className="w-full h-full rounded-full overflow-hidden border-4 border-background shadow-inner relative">
+                <img
+                  src="/admin.jpeg"
+                  alt="Dance Instructor"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
+                />
+              </div>
+            </div>
+
+            {/* Floating generic decorative elements */}
+            <div className="absolute -top-4 -right-12 px-4 py-2 bg-card rounded-xl shadow-lg border border-border flex items-center justify-center animate-bounce [animation-duration:3s]">
+              <span className="text-sm font-bold truncate">RabindraNritya</span>
+            </div>
+            <div className="absolute -bottom-2 -left-8 px-4 py-2 bg-card rounded-full shadow-lg border border-border flex items-center justify-center animate-bounce [animation-duration:4s] [animation-delay:1s]">
+              <span className="text-sm font-bold">Kathak</span>
+            </div>
+            <div className="absolute bottom-12 -right-24 px-4 py-2 bg-card rounded-xl shadow-lg border border-border flex items-center justify-center animate-bounce [animation-duration:5s] [animation-delay:0.5s]">
+              <span className="text-sm font-bold">Creative Dance</span>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+
+      </div>
+    </main>
   );
 }
