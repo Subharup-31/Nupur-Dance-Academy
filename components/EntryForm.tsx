@@ -1,5 +1,8 @@
 'use client';
 
+/**
+ * EntryForm component allows students to submit their daily dance class learning log.
+ */
 import { useState } from 'react';
 import { submitEntry } from '@/lib/actions';
 import { PenLine, CheckCircle2, Loader2, Send, Calendar } from 'lucide-react';
