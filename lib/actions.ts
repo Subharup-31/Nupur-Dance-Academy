@@ -162,6 +162,10 @@ export async function getAllStudents(): Promise<{ students: Profile[]; error: st
     return { students: (students || []) as Profile[], error: null };
 }
 
+/**
+ * Admin Action: Fetches all class entries from all students.
+ * @returns List of class entries with student profiles.
+ */
 export async function getAllEntries(): Promise<{ entries: ClassEntryWithStudent[]; error: string | null }> {
     const { supabase, error: authError } = await getAdminUser();
     if (authError) return { entries: [], error: authError };
