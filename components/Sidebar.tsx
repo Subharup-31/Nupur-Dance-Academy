@@ -1,5 +1,10 @@
 'use client';
 
+/**
+ * Sidebar component for navigation and user profile display.
+ * Includes Logout functionality.
+ */
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
