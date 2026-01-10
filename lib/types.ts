@@ -1,7 +1,9 @@
 // TypeScript types for the Dance Class Learning Log app
 
+/** Possible roles for users in the system */
 export type UserRole = 'student' | 'admin';
 
+/** User profile information stored in the public.profiles table */
 export interface Profile {
   id: string;
   name: string;
