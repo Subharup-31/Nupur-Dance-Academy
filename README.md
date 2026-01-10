@@ -2,6 +2,13 @@
 
 A Next.js application for dance students to log their progress and for instructors to monitor student activity.
 
+## Tech Stack
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Database**: [Supabase](https://supabase.com/) (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
 ## Getting Started
 
 First, run the development server:
