@@ -61,17 +61,10 @@ export default function AuthForm({ mode }: AuthFormProps) {
 
                     if (profileError) {
                         console.error('Error fetching profile:', profileError);
-                        console.error('Error details:', JSON.stringify(profileError, null, 2));
-                        console.error('Error message:', profileError.message);
-                        console.error('Error code:', profileError.code);
                     }
 
                     const role = profile?.role;
-                    console.log('[AuthForm] Login successful. User ID:', user.id);
-                    console.log('[AuthForm] Found profile role:', role);
-
                     const target = role === 'admin' ? '/admin/dashboard' : '/dashboard';
-                    console.log('[AuthForm] Redirecting to:', target);
 
                     router.refresh();
                     router.push(target);

@@ -28,13 +28,8 @@ export default async function AdminDashboardPage({ searchParams }: AdminDashboar
     const params = await searchParams;
     const selectedStudentId = params.student;
 
-    const { students, error: studentsError } = await getAllStudents();
-    const { entries: allEntries, error: entriesError } = await getAllEntries();
-
-    console.log('[AdminDashboard] Students fetch result:', students?.length, 'Error:', studentsError);
-    console.log('[AdminDashboard] Entries fetch result:', allEntries?.length, 'Error:', entriesError);
-    if (studentsError) console.error(studentsError);
-    if (entriesError) console.error(entriesError);
+    const { students } = await getAllStudents();
+    const { entries: allEntries } = await getAllEntries();
 
     // Calculate entry counts per student
     const entryCounts: Record<string, number> = {};
