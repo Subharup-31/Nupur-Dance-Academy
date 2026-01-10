@@ -1,4 +1,8 @@
-import { ClassEntry } from '@/lib/types';
+/**
+ * EntryList component displays a list of class entries.
+ * Can be used in both student dashboard and admin dashboard.
+ */
+import { ClassEntry, ClassEntryWithStudent } from '@/lib/types';
 import { FileText, User, Calendar, BookOpen } from 'lucide-react';
 
 interface EntryListProps {
