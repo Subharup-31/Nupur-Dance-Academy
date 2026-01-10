@@ -108,6 +108,10 @@ export async function getTodayEntry(): Promise<{ entry: ClassEntry | null; error
     return { entry: (entry as ClassEntry) || null, error: null };
 }
 
+/**
+ * Retrieves the profile information for the current user.
+ * @returns User profile or error.
+ */
 export async function getProfile(): Promise<{ profile: Profile | null; error: string | null }> {
     const { user, supabase, error: authError } = await getAuthenticatedUser();
     if (authError || !user) return { profile: null, error: authError || 'Not authenticated' };
