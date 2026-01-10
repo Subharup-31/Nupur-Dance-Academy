@@ -1,4 +1,7 @@
 import Link from 'next/link';
+/**
+ * StudentList component displays student profiles for administrators.
+ */
 import { Profile } from '@/lib/types';
 import { User, FileText, CalendarDays, ChevronRight } from 'lucide-react';
 
