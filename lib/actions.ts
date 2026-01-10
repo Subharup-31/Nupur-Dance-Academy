@@ -67,6 +67,10 @@ export async function submitEntry(content: string): Promise<{ error?: string; su
     return { success: true };
 }
 
+/**
+ * Fetches all class entries for the currently authenticated student.
+ * @returns List of entries or error.
+ */
 export async function getMyEntries(): Promise<{ entries: ClassEntry[]; error: string | null }> {
     const { user, supabase, error: authError } = await getAuthenticatedUser();
     if (authError || !user) return { entries: [], error: authError || 'Not authenticated' };
