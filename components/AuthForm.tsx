@@ -1,5 +1,9 @@
 'use client';
 
+/**
+ * AuthForm component handles both login and signup modes using Supabase Auth.
+ */
+
 import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useRouter } from 'next/navigation';
