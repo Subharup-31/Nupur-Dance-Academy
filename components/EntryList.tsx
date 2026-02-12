@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * EntryList component displays a list of class entries.
  * Optimized for mobile and desktop layouts.
@@ -9,9 +11,10 @@ import { FileText, User, Calendar, BookOpen } from 'lucide-react';
 interface EntryListProps {
     entries: ClassEntry[];
     showStudentName?: boolean;
+    onEntryClick?: (entry: ClassEntry) => void;
 }
 
-export default function EntryList({ entries, showStudentName = false }: EntryListProps) {
+export default function EntryList({ entries, showStudentName = false, onEntryClick }: EntryListProps) {
     if (entries.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
@@ -47,8 +50,9 @@ export default function EntryList({ entries, showStudentName = false }: EntryLis
             {entries.map((entry, index) => (
                 <article
                     key={entry.id}
-                    className={`group p-3 sm:p-4 hover:bg-secondary/50 transition-colors duration-150 ${index !== entries.length - 1 ? 'border-b border-border' : ''
-                        }`}
+                    onClick={() => onEntryClick?.(entry)}
+                    className={`group p-3 sm:p-4 hover:bg-secondary/70 transition-all duration-200 ${onEntryClick ? 'cursor-pointer hover:shadow-md hover:scale-[1.01]' : ''
+                        } ${index !== entries.length - 1 ? 'border-b border-border' : ''}`}
                 >
                     <div className="flex items-start gap-2.5 sm:gap-3">
                         {/* Icon */}
